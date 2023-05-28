@@ -1,15 +1,39 @@
-
-
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThreeCanvas } from '../components/ThreeCanvas';
-import ChatBox from '../components/ChatBox';  // Path to your ChatBox component
+import styles from '../styles/Home.module.css';
+import '../styles/globals.css';
+
+const Header = () => <h1 className={styles.title}>Ozyphus Studios</h1>;
+
+const Description = () => (
+  <p className={styles.description}>
+    Discover | Imagine | Create | Iterate
+  </p>
+);
 
 const LandingPage = () => {
+  const [theme, setTheme] = useState('dark');  // 'light' is the initial state
+
+  useEffect(() => {
+    document.body.dataset.theme = theme;
+  }, [theme]);
+
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+
   return (
-    <div>
-      <h1>Welcome to My Profile and Playground</h1>
-      <ThreeCanvas />
+    <div className={styles.container}>
+      <button onClick={toggleTheme}>Toggle Theme</button>
+      <Header />
+      <Description />
+      <div className={styles.cubeContainer}>
+        <ThreeCanvas />
+      </div>
     </div>
   );
 };
