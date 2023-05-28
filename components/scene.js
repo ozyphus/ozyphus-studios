@@ -12,7 +12,7 @@ export const Scene = () => {
 
   return (
     <>
-      <Box args={[1, 1, 1]} position={[0, 0.5, 0]}>
+      <Box args={[1, 8, 3]} position={[0, 4, 0]}>
         <meshStandardMaterial attach="material" map={texture} metalness={1} />
       </Box>
       <Box args={[100, 100, 100]}>

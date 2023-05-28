@@ -7,6 +7,7 @@ export default async (req, res) => {
         max_tokens: 150
     }, {
         headers: {
+            "Content-Type": "application/json",
             'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`
         }
     });

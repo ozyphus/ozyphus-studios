@@ -12,7 +12,7 @@ const Description = () => (
 );
 
 const LandingPage = () => {
-  const [theme, setTheme] = useState('dark');  // 'light' is the initial state
+  const [theme, setTheme] = useState('light');  // 'light' is the initial state
 
   useEffect(() => {
     document.body.dataset.theme = theme;
@@ -28,7 +28,9 @@ const LandingPage = () => {
 
   return (
     <div className={styles.container}>
-      <button onClick={toggleTheme}>Toggle Theme</button>
+      <button className={styles.themeToggle} onClick={toggleTheme}>
+        {theme === 'light' ? '🌙' : '☀️'}
+      </button>
       <Header />
       <Description />
       <div className={styles.cubeContainer}>

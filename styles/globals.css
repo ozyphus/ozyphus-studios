@@ -1,14 +1,13 @@
 body {
-    transition: background-color 0.3s ease-out, color 0.3s ease-out;
-  }
-  
-  body[data-theme="light"] {
-    background-color: white;
-    color: black;
-  }
-  
-  body[data-theme="dark"] {
-    background-color: black;
-    color: white;
-  }
-  
+  transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+body[data-theme="light"] {
+  background-color: white;
+  color: black;
+}
+
+body[data-theme="dark"] {
+  background-color: black;
+  color: white;
+}
